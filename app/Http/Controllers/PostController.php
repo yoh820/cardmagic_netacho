@@ -18,7 +18,17 @@ class PostController extends Controller
     public function neta_store(Request $request, Neta $neta)
     {
         $input = $request['neta'];
-        $neta->fill($input)->save();
+        $neta->fill($input);
+        
+        $movie=$request->file('movie');
+        if(isset($movie)===true)
+        {
+            $path=$movie->store('public');
+            $neta->movie_path = $path;   
+        }
+        
+        
+        $neta->save();
         return redirect('/myindex');    
     }
     

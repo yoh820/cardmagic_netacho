@@ -11,7 +11,7 @@
     <x-app-layout>
     <body>
         <h1>投稿画面</h1>
-        <form action="/posts_neta" method="POST">
+        <form action="/posts_neta" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="title">
                 <h2>ネタ名称</h2>
@@ -19,7 +19,7 @@
             </div>
             <div class="movie_path">
                 <h2>動画ファイル参照</h2>
-                <input type="text" name="neta[movie_path]" placeholder="ABC.mp4"/>
+                <input type="file" name="movie" placeholder="ABC.mp4"/>
             </div>
             <div class="url">
                 <h2>YouTubeのURL</h2>

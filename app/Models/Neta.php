@@ -12,7 +12,6 @@ class Neta extends Model
     
     protected $fillable = [
     'title',
-    'movie_path',
     'url',
     'body',
     'keyword',
