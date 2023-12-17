@@ -15,7 +15,7 @@ if(isset($neta->url)===true)
     {
         //URL直取り
         $start_str_no = strpos($youtube_url,"?v=")+3;
-        $str_int = strpos($youtube_url,"&ab") - $start_str_no;
+        $str_int = strpos($youtube_url,"&") - $start_str_no;
         $movie_iframe = "https://www.youtube.com/embed/".substr($youtube_url,$start_str_no,$str_int)."?si=_uAcAIsWUU_rl6Sp";
     }
 }
@@ -24,7 +24,6 @@ else
     //youtubeURLが値としてない→movieファイルがある
     //assetが思った挙動を示さないから妥協して置換する
     $movie_iframe = str_replace('amazonaws.com/public/','amazonaws.com/storage/',asset($neta->movie_path));
-    
 }
 
 ?>

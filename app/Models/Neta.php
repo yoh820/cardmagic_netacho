@@ -18,4 +18,9 @@ class Neta extends Model
     'public_private',
     'access_count',
     ];
+    
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }

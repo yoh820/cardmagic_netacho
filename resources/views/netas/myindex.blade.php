@@ -1,3 +1,10 @@
+<?php
+    
+    //ログインユーザーのidを変数に格納する
+    $user_id = Auth::id();
+
+?>
+
 <x-app-layout>
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
@@ -6,9 +13,11 @@
                     <h1>投稿一覧</h1>
                     <div class='netas'>
                         @foreach ($netas as $neta)
-                            <div class='neta'>
-                                <a href="/netas/{{ $neta->id }}">{{ $neta->title }}</a>
-                            </div>
+                            @if ($user_id === $neta->user_id)
+                                <div class='neta'>
+                                    <a href="/netas/{{ $neta->id }}">{{ $neta->title }}</a>
+                                </div>
+                            @endif
                         @endforeach
                     </div>
                 </div>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\Neta;
+use Illuminate\Support\Facades\Auth;
 
 
 class PostController extends Controller
@@ -19,6 +20,8 @@ class PostController extends Controller
     {
         $input = $request['neta'];
         $neta->fill($input);
+        
+        $neta->user_id = Auth::id();
         
         $movie=$request->file('movie');
         if(isset($movie)===true)
