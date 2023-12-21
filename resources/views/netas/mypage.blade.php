@@ -6,6 +6,9 @@
                     <h1>マイページ</h1>
                     <div class='netas'>
                         <p>
+                            <a href='/'>トップページ</a>
+                        </p>
+                        <p>
                             <a href='/post_neta'>ネタを投稿する</a>
                         </p>
                         <p>

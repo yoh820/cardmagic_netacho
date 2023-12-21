@@ -16,17 +16,11 @@ use App\Http\Controllers\NetaController;
 |
 */
 
-Route::get('/', function () {
-    return view('netas.top');
-});
+Route::get('/', [PostController::class, 'top']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
-
-Route::get('/mytop', function () {
-    return view('netas.mytop');
-})->middleware(['auth'])->name('mytop');
 
 Route::get('/mypage', function () {
     return view('netas.mypage');

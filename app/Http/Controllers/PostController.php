@@ -10,6 +10,10 @@ use Illuminate\Support\Facades\Auth;
 
 class PostController extends Controller
 {
+    public function top(Neta $neta)
+    {
+        return view('netas.top')->with(['netas' => $neta->get()]);
+    }
     
     public function myindex(Neta $neta)
     {
