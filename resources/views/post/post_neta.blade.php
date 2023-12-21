@@ -35,11 +35,10 @@
             </div>
             <div class="public_private">
                 <h2>公開・非公開</h2>
-                <input type="text" name="neta[public_private]" placeholder="公開フラグ"/>
-            </div>
-            <div class="access_count">
-                <h2>アクセス回数</h2>
-                <input type="text" name="neta[access_count]" placeholder="アクセス回数"/>
+                <select name="neta[public_private]">
+                    <option>公開</option>
+                    <option>非公開</option>
+                </select>
             </div>
             <input type="submit" value="投稿"/>
         </form>

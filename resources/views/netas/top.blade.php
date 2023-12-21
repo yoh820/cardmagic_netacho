@@ -1,3 +1,13 @@
+<?php
+
+$sort_pop = $netas->sortByDesc('access_count');
+$sort_pop_netas = $sort_pop->take(3);
+
+$sort_new = $netas->sortByDesc('created_at');
+$sort_new_netas = $sort_new->take(3);
+
+?>
+
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
@@ -36,8 +46,22 @@
         @endif
 
         <h1>カーディシャンのネタ帳</h1>
-        <div class='netas'>
-            <h2>テスト</h2>
+        <div class='pop_topic'>
+            <h2>人気ネタ</h2>
+            @foreach ($sort_pop_netas as $spn)
+                <div class='pop_neta'>
+                    <a href="/netas/{{ $spn->id }}">{{ $spn->title }}</a>
+                </div>
+            @endforeach
         </div>
+        <div class='new_topic'>
+            <h2>新着ネタ</h2>
+            @foreach ($sort_new_netas as $snn)
+                <div class='new_neta'>
+                    <a href="/netas/{{ $snn->id }}">{{ $snn->title }}</a>
+                </div>
+            @endforeach
+        </div>
+        
     </body>
 </html>
