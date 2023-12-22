@@ -23,7 +23,7 @@ else
 {
     //youtubeURLが値としてない→movieファイルがある
     //assetが思った挙動を示さないから妥協して置換する
-    $movie_iframe = str_replace('amazonaws.com/public/','amazonaws.com/storage/',asset($neta->movie_path));
+    $movie_iframe = str_replace('/public/','/storage/',asset($neta->movie_path));
 }
 
 ?>
